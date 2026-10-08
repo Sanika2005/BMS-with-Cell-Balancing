@@ -1,11 +1,15 @@
 # 🔋 Smart Battery Management System (BMS) with Cell Balancing using ESP32
+
 ## 📌 Project Overview
-This project is a Smart Battery Management System (BMS) developed using an ESP32 for a 2S Lithium-Ion battery pack. The main aim of the project is to monitor important battery parameters, 
-provide protection against unsafe conditions, and maintain better cell voltage balance.
-The system monitors individual cell voltage, total battery voltage, current, temperature, and State of Charge (SoC) in real time. Passive cell balancing is implemented using MOSFETs and resistors. 
-The ESP32 also provides Wi-Fi connectivity for IoT-based battery monitoring through ThingSpeak.
+
+This project is a Smart Battery Management System (BMS) developed using an ESP32 for a 2S Lithium-Ion battery pack. The main aim of the project is to monitor important battery parameters, provide protection against unsafe conditions, and maintain better cell voltage balance.
+
+The system monitors individual cell voltage, total battery voltage, current, temperature, and State of Charge (SoC) in real time. Passive cell balancing is implemented using MOSFETs and resistors. The ESP32 also provides Wi-Fi connectivity for IoT-based battery monitoring through ThingSpeak.
+
+---
 
 ## 🎯 Objectives
+
 - Monitor individual cell and total battery voltage
 - Monitor charging/discharging current
 - Monitor battery temperature
@@ -14,6 +18,8 @@ The ESP32 also provides Wi-Fi connectivity for IoT-based battery monitoring thro
 - Protect the battery from abnormal operating conditions
 - Display battery parameters in real time
 - Enable remote monitoring using IoT
+
+---
 
 ## ⚙️ Key Features
 
@@ -196,3 +202,11 @@ The proposed BMS can be useful for:
 **Domain:** Embedded Systems / IoT / Battery Management  
 **Controller:** ESP32  
 **Battery:** 2S Lithium-Ion Battery Pack
+
+---
+
+## 👩‍💻 Author
+
+**Sanika Ambildhuke**
+
+E&TC Engineering Student
