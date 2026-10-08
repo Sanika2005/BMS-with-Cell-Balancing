@@ -1,0 +1,208 @@
+# 🔋 Smart Battery Management System (BMS) with Cell Balancing using ESP32
+## 📌 Project Overview
+This project is a Smart Battery Management System (BMS) developed using an ESP32 for a 2S Lithium-Ion battery pack. The main aim of the project is to monitor important battery parameters, 
+provide protection against unsafe conditions, and maintain better cell voltage balance.
+The system monitors individual cell voltage, total battery voltage, current, temperature, and State of Charge (SoC) in real time. Passive cell balancing is implemented using MOSFETs and resistors. 
+The ESP32 also provides Wi-Fi connectivity for IoT-based battery monitoring through ThingSpeak.
+
+## 🎯 Objectives
+- Monitor individual cell and total battery voltage
+- Monitor charging/discharging current
+- Monitor battery temperature
+- Estimate State of Charge (SoC)
+- Perform passive cell balancing
+- Protect the battery from abnormal operating conditions
+- Display battery parameters in real time
+- Enable remote monitoring using IoT
+
+---
+
+## ⚙️ Key Features
+
+- Real-time cell voltage monitoring
+- Total battery voltage monitoring
+- Current monitoring using ACS712
+- Temperature monitoring using DS18B20
+- State of Charge (SoC) estimation
+- MOSFET-based passive cell balancing
+- Overvoltage protection
+- Undervoltage protection
+- Overcurrent protection
+- Over-temperature protection
+- Severe cell imbalance detection
+- Relay-based protection
+- 16×2 I2C LCD display
+- ESP32 Wi-Fi connectivity
+- ThingSpeak-based remote monitoring
+
+---
+
+## 🔧 Hardware Components
+
+| Component | Purpose |
+|---|---|
+| ESP32-WROOM-32 | Main controller |
+| 2 × 3.7V Li-ion Cells | Battery pack |
+| ACS712 Current Sensor | Current measurement |
+| DS18B20 Temperature Sensor | Temperature measurement |
+| IRFZ44N MOSFETs | Cell balancing control |
+| Relay Module | Battery/load protection |
+| Voltage Divider | Voltage measurement |
+| Balancing Resistors | Passive cell balancing |
+| 16×2 I2C LCD | Parameter display |
+| DC-DC Buck Converter | Regulated power supply |
+| Breadboard / Zero PCB | Prototype implementation |
+
+---
+
+## 💻 Software & Technologies
+
+- Arduino IDE
+- Embedded C / Arduino Programming
+- ESP32
+- Wi-Fi Communication
+- ThingSpeak
+- OneWire Library
+- DallasTemperature Library
+
+---
+
+## 🔄 Working Principle
+
+The ESP32 acts as the main controller of the BMS and continuously collects battery parameters from the connected sensors.
+
+The total battery voltage is measured through a voltage divider, while the first cell voltage is measured separately. The second cell voltage is obtained from the total battery voltage and cell 1 voltage.
+
+The ACS712 sensor measures the battery current and the DS18B20 sensor monitors battery temperature.
+
+The measured parameters are processed by the ESP32 and checked against predefined safety limits. If an unsafe condition such as overvoltage, undervoltage, overcurrent, excessive temperature, or severe cell imbalance is detected, the relay is controlled to disconnect the battery/load.
+
+The system also estimates the State of Charge (SoC) using the measured battery parameters.
+
+---
+
+## 🔋 Passive Cell Balancing
+
+Cell balancing is required because cells connected in series may develop different voltage levels during charging and discharging.
+
+In this project, passive cell balancing is used.
+
+When the voltage difference between the two cells exceeds the defined balancing threshold, the corresponding MOSFET is switched ON. The excess energy from the higher-voltage cell is dissipated through a balancing resistor.
+
+This helps reduce the voltage difference between the cells and improves the overall operation of the battery pack.
+
+### Balancing Method
+
+**Passive balancing → MOSFET + Resistor**
+
+---
+
+## 🛡️ Battery Protection
+
+The system continuously checks for abnormal battery conditions.
+
+| Condition | Protection |
+|---|---|
+| Overvoltage | Relay protection |
+| Undervoltage | Relay protection |
+| Overcurrent | Relay protection |
+| High Temperature | Relay protection |
+| Severe Cell Imbalance | Fault detection |
+| Reverse Current | Fault detection |
+
+When a fault condition is detected, the ESP32 changes the relay state to disconnect the protected circuit.
+
+---
+
+## 📊 Parameters Monitored
+
+- Cell 1 Voltage
+- Cell 2 Voltage
+- Total Battery Voltage
+- Current
+- Temperature
+- State of Charge (SoC)
+- Cell Voltage Difference
+- Balancing Status
+- Fault Status
+
+---
+
+## 🌐 IoT Monitoring
+
+The ESP32's built-in Wi-Fi capability can be used to send battery data to the ThingSpeak cloud platform.
+
+This allows parameters such as voltage, current, temperature, and SoC to be monitored remotely and visualized through graphs.
+
+---
+
+## 🖥️ Project Prototype
+
+### Hardware Prototype
+
+<img src="BMS_Hardware.jpeg" width="500">
+
+### Serial Monitor Output
+
+<img src="BMS_Serial_Monitor.jpeg" width="500">
+
+---
+
+## 📷 Project Output
+
+The Serial Monitor provides real-time information such as:
+
+- Cell 1 voltage
+- Cell 2 voltage
+- Total voltage
+- Current
+- Temperature
+- SoC
+- Cell voltage difference
+- Balancing status
+- Fault/normal status
+
+---
+
+## 🚀 Future Scope
+
+The project can be further improved by:
+
+- Implementing active cell balancing
+- Designing a dedicated PCB
+- Adding a mobile application for remote monitoring
+- Improving SoC estimation algorithms
+- Implementing reliable State of Health (SoH) estimation
+- Adding data logging and battery performance analysis
+- Extending the system to larger battery packs
+- Integrating the system with electric vehicle battery applications
+
+---
+
+## 📚 Applications
+
+The proposed BMS can be useful for:
+
+- Electric Vehicles
+- Solar Energy Storage
+- UPS and Backup Systems
+- Portable Power Systems
+- Robotics
+- Battery Energy Storage Systems
+
+---
+
+## 👥 Project Information
+
+**Project Type:** Third Year Mini Project  
+**Domain:** Embedded Systems / IoT / Battery Management  
+**Controller:** ESP32  
+**Battery:** 2S Lithium-Ion Battery Pack
+
+---
+
+## 👩‍💻 Author
+
+**Sanika Ambildhuke**
+
+E&TC Engineering Student
