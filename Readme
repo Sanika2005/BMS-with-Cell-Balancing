@@ -15,8 +15,6 @@ The ESP32 also provides Wi-Fi connectivity for IoT-based battery monitoring thro
 - Display battery parameters in real time
 - Enable remote monitoring using IoT
 
----
-
 ## ⚙️ Key Features
 
 - Real-time cell voltage monitoring
@@ -198,11 +196,3 @@ The proposed BMS can be useful for:
 **Domain:** Embedded Systems / IoT / Battery Management  
 **Controller:** ESP32  
 **Battery:** 2S Lithium-Ion Battery Pack
-
----
-
-## 👩‍💻 Author
-
-**Sanika Ambildhuke**
-
-E&TC Engineering Student
