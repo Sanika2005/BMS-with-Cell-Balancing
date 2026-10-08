@@ -202,11 +202,3 @@ The proposed BMS can be useful for:
 **Domain:** Embedded Systems / IoT / Battery Management  
 **Controller:** ESP32  
 **Battery:** 2S Lithium-Ion Battery Pack
-
----
-
-## 👩‍💻 Author
-
-**Sanika Ambildhuke**
-
-E&TC Engineering Student
